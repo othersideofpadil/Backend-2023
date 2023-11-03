@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AnimalController;
+use App\Http\Controllers\StudentController;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -33,4 +35,19 @@ Route::put('/animals/{id}', [AnimalController::class, "update"]);
 Route::delete('/animals/{id}', [AnimalController::class, "destroy"]);
 
 
-    
+// Students
+
+#method get all students
+Route::get('students', [StudentController::class,'index']);
+
+#method post  
+Route::post('/students', [StudentController::class,'store']);
+
+#method put
+Route::put('/students/{id}', [StudentController::class,'update']);
+
+#method delete
+Route::delete('/students/{id}', [StudentController::class,'destroy']);
+
+#mendapatkan detail student
+Route::get('/students/{id}', [StudentController::class,'show']);
