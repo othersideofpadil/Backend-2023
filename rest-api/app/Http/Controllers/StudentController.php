@@ -33,7 +33,7 @@ class StudentController extends Controller
         // validasi data request
         $request->validate([
           "nama"=>"required",
-          "nim"=> "required",
+          "nim"=> "required|numeric",
           "email"=> "required|email",
           "jurusan" => "required"
         ]);
